@@ -1,0 +1,18 @@
+name: Codespace Auto Commit and Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  auto_commit_and_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Commit and Push
+        run: |
+          git add .
+          git commit -m "Automatic commit from Codespace"
+          git push origin main
